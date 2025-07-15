@@ -12,6 +12,16 @@ namespace HireLatamTest
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll", policy =>
+                {
+                    policy.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader();
+                });
+            });
+
             // Add services to the container.
 
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -25,6 +35,8 @@ namespace HireLatamTest
             builder.Services.AddScoped<IProductService, ProductService>();
 
             var app = builder.Build();
+
+            app.UseCors("AllowAll");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
