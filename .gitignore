@@ -26,3 +26,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.vs/HireLatamTest
+/.vs/slnx.sqlite
+/.vs/VSWorkspaceState.json
+/HireLatamTest/.vs/HireLatamTest
+/HireLatamTest/HireLatamTest/bin/Debug/net8.0
+/HireLatamTest/HireLatamTest/obj
